@@ -1,57 +1,15 @@
-*{
-    margin: 0;padding: 0;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
 }
-body,html{
+body{
     width: 100%;
     height: 100%;
-    background-color: #e9c46a;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    
 }
-#main{
-    width: 200px;
-    height: 200px;
-    border-radius: 12px;
-    background-color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
-#main #menu{
-    width: 50%;
-    height: 60%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-evenly;
-}
-hr{
-    color: #000000;
-    width: 100px;
-    height: 10px;
-    background-color: #000;
-    border-radius: 30px;
-    border: none;
-    transition: all .6s ease;
-}
-#middle{
-    width: 50px;
-}
-
-#menu:hover{
-    .line{
-        scale: 1.1;
-    }
-}
-
-
-
-/* navigation  */
 #nav {
     width: 100%;
     position: fixed;
@@ -68,14 +26,24 @@ hr{
     color: #000000;
     font-size: 18px;
     font-weight: 700;
-    /* display: block; */
+    display: flex;
+    align-items: center;
 }
 
 #nav a i {
     margin-right: 20px;
+    font-size: 24px;
 }
+#main {
+    width: 100%;
+    height: 100%;
+    background-color: #d5d5d5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-/* project details  */
+}
+/* projects details  */
 .project-details {
     position: absolute;
     top: 50px;
@@ -83,6 +51,8 @@ hr{
     width: 400px;
     height: 300px;
     display: flex;
+    z-index: 99;
+
     flex-direction: column;
     justify-content: space-evenly;
     padding: 0 20px;
@@ -100,7 +70,7 @@ hr{
 }
 
 .project-details .links {
-    width: 30%;
+    width: 25%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -126,31 +96,55 @@ hr{
     color: red;
     scale: 1.3;
 }
-
-/* thanking   */
-
-.thanking {
+/* note  */
+#note{
     position: absolute;
-    top: 50px;
-    right: 20px;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
 }
-
-.thanking p {
+#note p {
     font-size: 18px;
     font-style: italic;
     font-weight: 500;
 }
-
-.thanking p i {
-    margin-left: 10px;
+#main{
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff;
 }
+#image-box{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    position: relative;
+}
+.image{
+    width: 50%;
+    height: 400px;
+    margin: 200px auto 190px;
+    overflow: hidden;
+    border-radius: 12px;
+    position: sticky;
+    top: 200px;   
 
-/* note  */
-.note {
-    position: absolute;
-    bottom: 20px;
-    font-size: 12px;
-    font-style: italic;
-    font-weight: 400;
+}
+.image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: all .3s ease;
+    scale: 1;
 
+}
+.image img:hover{
+    scale:1.1;
+    
+}
+.image:nth-child(odd){
+    rotate: 2deg;
+}
+.image:nth-child(even){
+    rotate: -2deg;
 }
